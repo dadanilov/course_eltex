@@ -3,42 +3,32 @@
 #include<sys/ipc.h>
 #include<sys/shm.h>
 #include<errno.h>
+#include <stdlib.h>
+
 int main()
 {
-	int shmid, i = 0, len = 0;
-	char *array,pathname[]="result.c", a;
+	int shmid, i = 0;
+	char *array, pathname[] = "p1.c";
 	key_t key;
-	FILE *f = fopen("p2.c","r");
+	FILE *f;
 	if ((key = ftok(pathname, 0)) < 0)
 	{
 		printf("Ошибка: не удается сгенерировать ключ.\n");
 	}
-	if ((shmid = shmget (key, 1280*sizeof (char), 0666 | IPC_CREAT|IPC_EXCL)) < 0)
-	{
-		if (errno != EEXIST)
-		{
-			printf("Ошибка: не удается создать общую память.\n");
-		}
-		else
-		{
-			if ((shmid = shmget (key, 1280*sizeof (char), 0)) < 0)
-			{
-				printf("Ошибка: не удается найти общую память.\n");
-			}
-		}
+	if ((shmid = shmget (key, 1280*sizeof (char), 0)) < 0)
+	{	
+		printf("Ошибка: не удается найти общую память.\n");
+		exit(-1);
 	}
-	if ((array=(char *)shmat(shmid, NULL, 0)) == (char *)(-1))
+	if ((array = shmat(shmid, NULL, 0)) == (char *) - 1)
 	{
 		printf("Ошибка: не удается подключить общую память.\n");
+		exit(-1);
 	}
-	for (i = 0; i < 1280; i++)
-	{
-		printf("%c",array[i]);
-	}
+	printf("%s\n",array);
 	if (shmdt(array) < 0)
 	{
 		printf("Ошибка: не удается отсоединить общую память.\n");
 	}
-	pclose(f);
 	return 0;
 }
