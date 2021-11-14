@@ -1,4 +1,4 @@
-/* Простой пример TCP-клиента для сервиса echo */
+/* TCP-клиент для работы с сервером */
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
@@ -8,6 +8,7 @@
 #include <errno.h>
 #include <unistd.h>
 #include <stdlib.h>
+
 void main(int argc, char **argv)
 {
     	int sockfd; /* Дескриптор сокета */
