@@ -1,0 +1,1 @@
+cmd_/home/danil/Git/GitHub/dadanilov/course_eltex/Module_5/HelloWorld/hello.mod := { echo  /home/danil/Git/GitHub/dadanilov/course_eltex/Module_5/HelloWorld/hello.o;  echo; } > /home/danil/Git/GitHub/dadanilov/course_eltex/Module_5/HelloWorld/hello.mod

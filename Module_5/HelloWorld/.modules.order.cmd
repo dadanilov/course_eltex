@@ -1,0 +1,1 @@
+cmd_/home/danil/Git/GitHub/dadanilov/course_eltex/Module_5/HelloWorld/modules.order := {   echo /home/danil/Git/GitHub/dadanilov/course_eltex/Module_5/HelloWorld/hello.ko; :; } | awk '!x[$$0]++' - > /home/danil/Git/GitHub/dadanilov/course_eltex/Module_5/HelloWorld/modules.order
