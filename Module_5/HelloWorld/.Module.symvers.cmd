@@ -1,1 +1,0 @@
-cmd_/home/danil/Git/GitHub/dadanilov/course_eltex/Module_5/HelloWorld/Module.symvers := sed 's/ko$$/o/' /home/danil/Git/GitHub/dadanilov/course_eltex/Module_5/HelloWorld/modules.order | scripts/mod/modpost -m -a   -o /home/danil/Git/GitHub/dadanilov/course_eltex/Module_5/HelloWorld/Module.symvers -e -i Module.symvers   -T -
